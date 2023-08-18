@@ -18,10 +18,7 @@ Dependecies:
 
 next.js create app https://nextjs.org/docs/pages/api-reference/create-next-app 
 
-npx create-next-app@latest --js 
+npx create-next-app@latest 
 
 Dependencies: 
-
-npm install -D tailwindcss
-
-npm install @headlessui/react 
+ 

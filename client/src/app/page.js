@@ -13,8 +13,8 @@ export default function Home() {
           <div className="flex flex-wrap justify-center">
             <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-fuchsia-400 text-gray-100">Get started</button>
             <button className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 border-emerald-400">Learn more</button>
-            <fieldset className="w-full space-y-1 dark:text-gray-100">
-              <label for="Search" className="hidden">Search</label>
+            {/* <fieldset className="w-full space-y-1 dark:text-gray-100">
+              <label htmlFor="Search" className="hidden">Search</label>
               <div className="relative">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                   <button type="button" title="search" className="p-1 focus:outline-none focus:ring">
@@ -25,7 +25,7 @@ export default function Home() {
                 </span>
                 <input type="search" name="Search" placeholder="Search..." className="w-32 py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900 focus:dark:border-violet-400" />
               </div>
-            </fieldset>
+            </fieldset> */}
           </div>
         </div>
       </section>

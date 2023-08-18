@@ -1,0 +1,20 @@
+    url: string
+    repository_url: string
+    labels_url: string
+    id: integer
+    number: integer
+    title: string
+    user: string = user.login
+    user_avatar: string = user.avatar_url
+    user_url: string = user.url
+    state: boolean
+    locked: boolean
+    current_assignee: assignee = string
+    comments: integer,
+    created_at: timestamp
+    updated_at: timestamp
+    closed_at: timestamp
+    author_association: string
+    body: string
+    positive_reactions: integer = reactions.+1
+    negative_reactions: integer = reactions.-1

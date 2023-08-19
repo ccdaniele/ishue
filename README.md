@@ -26,3 +26,18 @@ Tailwinds
 
 npm install octokit 
  
+
+ORT=
+MONGO_URI= "mongodb+srv://ishue:SPuySvyc7hoIdnVs@ishue-auth.gg1ggne.mongodb.net/?retryWrites=true&w=majority"
+
+ACCESS_TOKEN_SECRET="eyJhbGciOiJIUzI1NiJ9.e30.FXibJVNHsvJ6Ff-N9XtTTom9cGExRqsldHbrhAOqRUg"
+REFRESH_TOKEN_SECRET="eyJhbGciOiJIUzUxMiJ9.e30.KCZ5m4MoRSeRA8kNBJyvTtoGwuedtmNqO6NSfK5OGy4XMTGPwC_8Tz_UK5yUlVQKZ0AuZq1-K-G9BOl1qMPYJw"
+VERIFY_EMAIL_TOKEN_SECRET=
+EMAIL_HOST="danecalco@gmailcom"
+EMAIL_USER="nodemailer"
+EMAIL_PASSWORD="gubsucdsifhbjsdq"
+CLIENT_URL="http://localhost:8080/"
+# mongo_db:https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/
+# Role name: ishue
+# password: SPuySvyc7hoIdnVs
+ 

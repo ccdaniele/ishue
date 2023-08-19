@@ -1,35 +1,34 @@
 
 
+
 export default function Home() {
   return (
+  
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <section className="dark:bg-gray-800 dark:text-gray-100">
-        <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
+      <container>
+    <div>
+        <div className="mx-auto flex flex-col items-center text-center lg:px-32 xl:max-w-3xl pt-8">
           <h1 className="text-4xl font-bold leadi sm:text-5xl"> Monitor your issues 
             <span className="text-emerald-400"> with </span>
             <span className="text-fuchsia-400"> ishues</span> 
-           
           </h1>
-          <div className="flex flex-wrap justify-center">
-            <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-fuchsia-400 text-gray-100">Get started</button>
-            <button className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 border-emerald-400">Learn more</button>
-            {/* <fieldset className="w-full space-y-1 dark:text-gray-100">
-              <label htmlFor="Search" className="hidden">Search</label>
-              <div className="relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-                  <button type="button" title="search" className="p-1 focus:outline-none focus:ring">
-                    <svg fill="currentColor" viewBox="0 0 512 512" className="w-4 h-4 dark:text-gray-100">
-                      <path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
-                    </svg>
-                  </button>
-                </span>
-                <input type="search" name="Search" placeholder="Search..." className="w-32 py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900 focus:dark:border-violet-400" />
-              </div>
-            </fieldset> */}
-          </div>
         </div>
-      </section>
-    </main>
+      </div>
+      <div className="mt-16  flex flex-col justify-center items-center sm:flex-row">
+          <a className="w-80 inline-flex justify-center items-center gap-x-5 text-center text-gray-100 bg bg-fuchsia-400 text-lg text tracking-widest font-medium rounded-md hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-slate-900 transition py-3 px-4" href="https://github.com/htmlstreamofficial/preline/tree/main/examples/html" target="_blank">
+            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width={40} height={36} fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            Explore git issues
+          </a>
+        </div>
+
+
+        </container>
+
+
+
+   </main>
   )
 }
 

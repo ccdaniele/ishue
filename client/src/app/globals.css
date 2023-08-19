@@ -4,4 +4,15 @@
 
 
 
-
+@layer base{
+    body {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    padding-top: 90px;
+    padding-bottom: 90px;   
+  }
+}

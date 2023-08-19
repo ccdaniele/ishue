@@ -23,4 +23,6 @@ npx create-next-app@latest
 Dependencies: 
 
 Tailwinds
+
+npm install octokit 
  

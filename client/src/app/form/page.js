@@ -1,36 +1,41 @@
 'use client'
-import { useRouter } from "next/navigation";
+
 
 export default function form() {
 
-  // const router = useRouter();
-  // const { query } = router.query;
+  const handleSubmit = async (event) => {
+    event.preventDefault()
 
-const handleSubmit = async (event) => {
-  event.preventDefault()
+    const params = {
+      owner: event.target.first.value,
+      repo: event.target.last.value,
+    }
 
- 
+    const JSONdata = JSON.stringify(params)
+    const endpoint = `/api/issues?owner=${params.owner}&repo=${params.repo}`
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+    
+    const response = await fetch(endpoint, options)
 
-  const params = {
-    owner: event.target.first.value,
-    repo: event.target.last.value,
+    try {
+      const result = await response.json();
+
+      console.log('success',result)
+    }
+
+    catch (error){
+      
+      console.log('error',result)
+    }
+      
   }
-
-  const JSONdata = JSON.stringify(params)
-  const endpoint = `/api/issues?owner=${params.owner}&repo=${params.repo}`
-  const options = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }
-  
-  const response = await fetch(endpoint, options)
-  const result = await response.json();
-  console.log('success',response)
-}
     return (
-      // We pass the event to the handleSubmit() function on submit.
+      
       <form onSubmit={handleSubmit}>
       
       <div className="bg-white rounded-lg shadow sm:max-w-md sm:w-full sm:mx-auto sm:overflow-hidden">

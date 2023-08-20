@@ -2,23 +2,32 @@ import { NextResponse} from 'next/server'
 
 
  
-export async function GET(req) {
+export async function GET(request) {
 
-  const { owner, repo } = req.nextUrl.searchParams
+  const { owner, repo } = request.nextUrl.searchParams
 
   const endpoint =  `https://api.github.com/repos/${owner}/${repo}/issues`
 
-
-  const res = await fetch(endpoint, {
+  const options = {
     method: 'GET',
     headers: {
-      "Authorization": "Token " + process.env.GIT_TOKEN,
       'Content-Type': 'application/json',
-    
+      "Authorization": "Token " + process.env.GIT_TOKEN,
     },
-  })
+
+  }
+
+  const response = await fetch(endpoint, options)
+
+  try {
+    const fetched = await response.json()
+
+    return NextResponse.json(fetched)
+  }
+
+  catch (error){throw new Error('Failed to fetch data')
+}
+    
+
  
-  const data = await res.json()
- 
-  return NextResponse.json(data)
 }

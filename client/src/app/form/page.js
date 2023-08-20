@@ -1,7 +1,10 @@
 'use client'
 
+// import { useParams } from 'next/navigation'
 
 export default function form() {
+
+  // const { owner, repo } = useParams()
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -17,6 +20,7 @@ export default function form() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        'arguments':`{'owner':'${params.owner}', 'repo':'${params.repo}'}`
       },
     }
     

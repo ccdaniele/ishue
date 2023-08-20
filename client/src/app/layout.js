@@ -2,7 +2,6 @@
 
 import './globals.css'
 import { Roboto } from "next/font/google"
-// import "tw-elements/dist/css/tw-elements.min.css"
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] })
 
@@ -21,3 +20,11 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+// return (
+//   <html lang="en">
+//     {props.children}
+//     {props.form}
+//     {/* <body className={roboto.className}>{props.children}</body> */}
+//   </html>
+// )

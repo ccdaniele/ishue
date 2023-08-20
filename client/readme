@@ -1,0 +1,9 @@
+npm install next-themes 
+
+npm install -D postcss-import 
+
+npm install -D autoprefixer
+
+npm install tw-elements
+
+npm i -D daisyui@latest

@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* @import 'tailwind/base';
+@import 'tailwind/components';
+@import 'tailwind/utilities'; */
 
 @layer base{
     body {

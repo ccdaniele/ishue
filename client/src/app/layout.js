@@ -20,11 +20,3 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-
-// return (
-//   <html lang="en">
-//     {props.children}
-//     {props.form}
-//     {/* <body className={roboto.className}>{props.children}</body> */}
-//   </html>
-// )

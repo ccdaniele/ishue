@@ -6,23 +6,22 @@ import { useState } from 'react'
 export default function Home() {
 
   const [ success, setSuccess ] = useState(false) 
+  const [ data, setData ] = useState([]) 
   const router = useRouter()
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(event)
     const params = {
-      owner: event.target.inputOwner.value,
-      repo: event.target.inputRepo.value,
-      url: event.target.inputUrl.value,
+      urlPath: new URL(event.target.inputUrl.value).pathname
     }
 
     const JSONdata = JSON.stringify(params)
-    const endpoint = `/api/issues?owner=${params.owner}&repo=${params.repo}`
+    const endpoint = `/api/issues?urlPath=${params.urlPath}`
     const options = {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'arguments':`{'owner':'${params.owner}', 'repo':'${params.repo}'}`
+        'arguments':`{'urlPath':'${params.urlPath}'}`
       },
     }
     
@@ -32,13 +31,13 @@ export default function Home() {
       const result = await response.json();
 
       console.log('success',result)
-      setPayload(response)
-      router.push('/report')
+
+      setSuccess(true)
+      setData(result)
     }
 
     catch (error){
       
-      console.log('error',result)
     }
       
   }
@@ -48,7 +47,7 @@ export default function Home() {
     <main>
       {/* query */}
         <div>
-        {/* conditional start */}
+        {/* conditional start 1 */}
         {!success? 
             <div className="hero min-h-screen bg-base-200">
               <div className="hero-content">
@@ -99,58 +98,47 @@ export default function Home() {
          // conditional=false
         <div>{console.log('no') }</div>
         }
+        {/* end conditional 1*/}
         </div>  
         {/* report */}
         <div>
-          {/* conditional start */}
+          {/* conditional start 2 */}
           {success? 
           // conditional=true
-            <div className="hero min-h-screen bg-base-200">
-                  <div className="hero-content">
-                    <div className="overflow-x-auto">
-                        <table className="table">
-                            {/* head */}
-                            <thead>
-                              <tr>
-                                  <th></th>
-                                  <th>Name</th>
-                                  <th>Job</th>
-                                  <th>Favorite Color</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                            {/* row 1 */}
-                              <tr>
-                                  <th>1</th>
-                                  <td>Cy Ganderton</td>
-                                  <td>Quality Control Specialist</td>
-                                  <td>Blue</td>
-                              </tr>
-                            {/* row 2 */}
-                              <tr>
-                                  <th>2</th>
-                                  <td>Hart Hagerty</td>
-                                  <td>Desktop Support Technician</td>
-                                  <td>Purple</td>
-                              </tr>
-                            {/* row 3 */}
-                              <tr>
-                                  <th>3</th>
-                                  <td>Brice Swyre</td>
-                                  <td>Tax Accountant</td>
-                                  <td>Red</td>
-                              </tr>
-                            </tbody>
-                        </table>
-                      </div>
-                  </div>
+          <div className="hero min-h-screen bg-base-200">
+            <div className="overflow-x-auto">
+            <div>{data.map(data=>             
+                <table className="table table-md table-pin-rows table-pin-cols">
+                  {/* head */}
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Title</th>
+                      <th>Username</th>
+                      <th>URL</th>
+                      <th>Statys</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* row 1 */}
+                    <tr>
+                      <th></th>
+                      <td>{data.title}</td>
+                      <td>{data.user.login}</td>
+                      <td>{data.url}</td>
+                      <td>{data.state}</td>
+                    </tr>
+                  </tbody>
+                </table>  
+            )}
             </div>
-           
+            </div>
+          </div>    
           :
           // conditional=false
           <div>{console.log('no') }</div>
           }
-          {/* end conditional */}
+          {/* end conditional 2*/}
         </div>
   </main>
   

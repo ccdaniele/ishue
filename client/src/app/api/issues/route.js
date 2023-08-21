@@ -2,11 +2,9 @@ import { NextResponse} from 'next/server'
  
 export async function GET(request) {
 
-  const owner = request.nextUrl.searchParams.get("owner")
+  const urlPath = request.nextUrl.searchParams.get("urlPath")
 
-  const repo = request.nextUrl.searchParams.get("repo")
-
-  const endpoint =  `https://api.github.com/repos/${owner}/${repo}/issues`
+  const endpoint =  `https://api.github.com/repos${urlPath}/issues`
 
   const options = {
     method: 'GET',
